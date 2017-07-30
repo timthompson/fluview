@@ -65,9 +65,10 @@
          */
         
         var processSearch = function(term) {
+            var alphaNum = term.replace(/[^0-9a-z\s]/gi, '');
             // only call our search endpoint if there is something to search for
-            if (term.trim() !== "") {
-                callSearch(term);
+            if (alphaNum.trim() !== "") {
+                callSearch(alphaNum);
             }
         };
         
