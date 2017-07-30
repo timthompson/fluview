@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Flu View</title>
+        <meta name="description" content="Flu View">
+        <meta name="author" content="Timothy N Thompson">
+
+        <link rel="stylesheet" href="css/spectre.min.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <script
+            src="http://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+        
+        <script src="js/script.js"></script>
+    </head>
+
+    <body>
+        <header class="navbar">
+            <section class="navbar-section">
+                <a href="/about" class="btn btn-link">About</a>
+                <a href="/help" class="btn btn-link">Help</a>
+            </section>
+            <section class="navbar-section">
+                <div class="title-container text-center">
+                    <h3 class="title">Flu View</h3>
+                </div>
+            </section>
+            <section class="navbar-section">
+                <div class="search-container input-group input-inline">
+                    <input id="flutrack-search" class="form-input" type="text" placeholder="Search FLUTRACK" />
+                    <button id="search" class="btn btn-primary input-group-btn">Search</button>
+                </div>
+            </section>
+        </header>
+        <div class="divider"></div>
+        <section>
+            <div class="container grid-960">
+                <div class="columns">
+                    <div class="column col-12">        
+                        <div id="map"></div>
+                    </div>
+                    <div class="column col-12">
+                        <p>Currently Showing <span id="total" class="badge" data-badge="0">results</span> for: <span id="search-terms"></span></p>
+                    </div>
+                </div>
+            </div>        
+        </section>
+        
+        <script async defer src="/googlemaps"></script>
+    </body>
+</html>
