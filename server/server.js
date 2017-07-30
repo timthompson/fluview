@@ -8,8 +8,8 @@ app.use(express.static('./site'));
 
 app.use('/', routes);
 // Turn on that server!
-let server = app.listen(3000, () => {
-  console.log('App listening on port 3000');
+let server = app.listen(8080, () => {
+  console.log('App listening on port 8080');
 });
 
 module.exports = server;
