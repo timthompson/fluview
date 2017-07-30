@@ -2,6 +2,9 @@
 const request = require('request');
 const routes = require('express').Router();
 const path = require('path');
+const Utils = require('../utils');
+
+let utils = new Utils();
 
 // set root for content
 const root = '/../../site/';
@@ -39,7 +42,7 @@ routes.get('/googlemaps', (req, res) => {
 routes.get('/search/:term', (req, res) => {
     let limit    = 100, // max results
         time     = 7,   // days
-        fluTrack = "http://api.flutrack.org/?s=" + encodeURIComponent(req.params.term) + "&time=" + time + "&limit=" + limit;
+        fluTrack = "http://api.flutrack.org/?s=" + encodeURIComponent(utils.cleanInput(req.params.term)) + "&time=" + time + "&limit=" + limit;
     
     request(fluTrack).pipe(res);
 });

@@ -5,20 +5,21 @@
   "description": "Tracking potential flu outbreaks via twitter",
   "main": "server/server.js",
   "engines": {
-    "node" : ">=6.10.3"  
-  },    
+    "node": ">=6.10.3"
+  },
   "dependencies": {
     "express": "^4.15.3",
     "nconf": "^0.8.4",
     "request": "^2.81.0"
   },
   "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "1.3.1",
+    "chai": "^4.1.0",
     "mocha": "^3.4.2",
-    "supertest": "^3.0.0",
-    "@google-cloud/nodejs-repo-tools": "1.3.1"  
+    "supertest": "^3.0.0"
   },
   "scripts": {
-    "deploy": "gcloud app deploy",  
+    "deploy": "gcloud app deploy",
     "test": "mocha server/tests/api-test.js",
     "start": "node server/server.js"
   },
