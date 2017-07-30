@@ -42,7 +42,7 @@ routes.get('/googlemaps', (req, res) => {
 routes.get('/search/:term', (req, res) => {
     let limit    = 100, // max results
         time     = 7,   // days
-        fluTrack = "http://api.flutrack.org/?s=" + encodeURIComponent(utils.cleanInput(req.params.term)) + "&time=" + time + "&limit=" + limit;
+        fluTrack = "http://api.flutrack.org/?s=" + encodeURIComponent(utils.processInput(req.params.term)) + "&time=" + time + "&limit=" + limit;
     
     request(fluTrack).pipe(res);
 });

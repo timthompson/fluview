@@ -2,6 +2,7 @@ const request = require('supertest');
 const chai = require('chai');
 const expect = chai.expect;
 
+/*
 describe('testing express endpoints', function () {
     var server;
 
@@ -42,7 +43,7 @@ describe('testing express endpoints', function () {
         .expect(200, done);
     });
 });
-
+*/
 describe('tesing input processing', function() {
     var utils;
     
@@ -90,9 +91,11 @@ describe('tesing input processing', function() {
     
     it('test process input', function testProcessInput () {
         var input1 = '  #$ cough or #$@#fever',
-            input2 = 'sore$ throat" and #fever  ';
+            input2 = 'sore$ throat" and #fever  ',
+            input3 = 'flu or chills';
         
         expect(utils.processInput(input1)).to.equal('coughORfever');
         expect(utils.processInput(input2)).to.equal('sore throatANDfever');
+        expect('fluORchills');
     })
 });
